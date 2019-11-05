@@ -3,7 +3,7 @@
 (ggtags-mode 1)
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode `go-mode)
               (ggtags-mode 1))))
 
 (dolist (map (list ggtags-mode-map dired-mode-map))

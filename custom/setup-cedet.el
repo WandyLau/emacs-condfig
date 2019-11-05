@@ -17,6 +17,6 @@
 
 ;; Enable EDE only in C/C++
 (require 'ede)
-(global-ede-mode)
+(global-ede-mode 1)
 
 (provide 'setup-cedet)
