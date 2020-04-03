@@ -18,7 +18,7 @@
 ;; “python”: What Python developers use for extension modules
 ;; “java”: The default style for java-mode (see below)
 ;; “user”: When you want to define your own style
-(setq c-default-style) "linux" ;; set style to "linux"
+(setq c-default-style "linux");; set style to "linux"
 
 ;;(use-package cc-mode
 ;;  :init
@@ -26,7 +26,7 @@
 ;;  (define-key c++-mode-map  [(tab)] 'company-complete))
 
 (require `cc-mode)
-(define-key c-mode-map  [(tab)] 'company-complete
+(define-key c-mode-map  [(tab)] 'company-complete)
 (define-key c++-mode-map  [(tab)] 'company-complete)
 
 (provide 'setup-c)

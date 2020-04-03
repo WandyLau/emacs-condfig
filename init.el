@@ -33,7 +33,7 @@
 ;;        (tab-mark 9 [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
 ;;        ))
 (windmove-default-keybindings)
-;;(byte-recompile-directory "~/.emacs.d/" 0 t)
+(byte-recompile-directory "~/.emacs.d/" 0 t)
 (setq python-shell-completion-native-enable nil)
 
 ;; this is the zenburn-theme

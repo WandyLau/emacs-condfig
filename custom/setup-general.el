@@ -52,8 +52,9 @@
 (require `company)
 
 ;; activate whitespace-mode to view all whitespace characters
-;;(global-set-key (kbd "C-c w") 'whitespace-mode)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 ;;(windmove-default-keybindings)
+(global-whitespace-mode 1)
 
 ;; general setup
 (show-paren-mode 1)
@@ -134,8 +135,9 @@
 (ac-config-default)
 
 ;;go mode.
-(add-to-list `load-path "~/.emacs.d/go-mode.el")
+(add-to-list `load-path "~/.emacs.d/custome/go-mode.el")
 (require `go-mode-autoloads)
+(require 'go-dlv)
 
 (setq scroll-step            1
       scroll-conservatively  10000)
@@ -213,22 +215,24 @@
 (with-eval-after-load 'go-mode
    (require 'go-autocomplete))
 
+(require 'go-dlv)
+
 ;; If the go-guru.el file is in the load path, this will load it.
 ;;(require 'me-alpheus-gotags)
-(global-set-key (kbd "M-.") #'me.alpheus/gotags/tag-search)
+;;(global-set-key (kbd "M-.") #'me.alpheus/gotags/tag-search)
 ;; a minor mode for highlighting empty space at end of lines
 ;;(require 'redspace-mode)
 ;; make the tab visible
-(standard-display-ascii ?\t "^>>")
-(defface extra-whitespace-face
-  '((t (:background "pale green")))
-  "Used for tabs and such.")
-(defvar my-extra-keywords
-  '(("\t" . 'extra-whitespace-face)))
-(add-hook 'emacs-lisp-mode-hook
-          (lambda () (font-lock-add-keywords nil my-extra-keywords)))
-(add-hook 'text-mode-hook
-          (lambda () (font-lock-add-keywords nil my-extra-keywords)))
+;;(standard-display-ascii ?\t "^>>")
+;;(defface extra-whitespace-face
+;;  '((t (:background "pale green")))
+;;  "Used for tabs and such.")
+;;(defvar my-extra-keywords
+;;  '(("\t" . 'extra-whitespace-face)))
+;;(add-hook 'emacs-lisp-mode-hook
+;;          (lambda () (font-lock-add-keywords nil my-extra-keywords)))
+;;(add-hook 'text-mode-hook
+;;          (lambda () (font-lock-add-keywords nil my-extra-keywords)))
 
 ;; Draw tabs with the same color as trailing whitespace
 (add-hook 'font-lock-mode-hook
@@ -241,5 +245,8 @@
 (global-set-key (kbd "C-j") 'left-word)
 (global-set-key (kbd "C-l") 'right-word)
 
-(global-set-key (kbd "<f5>") 'replace-string)
+;;(global-set-key (kbd "<f6>") 'isearch-regexp)
+;(define-key isearch-mode-map "<f5>" 'isearch-repeat-forward)
+(global-set-key (kbd "<f6>") 'replace-string)
+;(define-key isearch--mode-map "<f8>" 'isearch-repeat-forward)
 (provide 'setup-general)
