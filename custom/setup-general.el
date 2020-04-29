@@ -245,8 +245,19 @@
 (global-set-key (kbd "C-j") 'left-word)
 (global-set-key (kbd "C-l") 'right-word)
 
+;; make life easier and this is yaml mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+(add-hook 'yaml-mode-hook
+          (lambda ()
+            (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
 ;;(global-set-key (kbd "<f6>") 'isearch-regexp)
 ;(define-key isearch-mode-map "<f5>" 'isearch-repeat-forward)
 (global-set-key (kbd "<f6>") 'replace-string)
-;(define-key isearch--mode-map "<f8>" 'isearch-repeat-forward)
+;;(define-key isearch--mode-map "<f8>" 'isearch-repeat-forward)
+
+;; json mode
+(require 'json-mode)
+
 (provide 'setup-general)
