@@ -13,7 +13,7 @@
 (require 'setup-ivy-counsel)
 (require 'setup-helm)
 (require 'setup-helm-gtags)
-(require 'setup-ggtags)
+;;(require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
 ;;(require 'zenburn-theme)
@@ -112,4 +112,3 @@
 (defun auto-complete-for-go ()
   (auto-complete-mode 1))
 (add-hook 'go-mode-hook 'auto-complete-for-go)
-

@@ -2,7 +2,7 @@
 ;;(tool-bar-mode -1)
 
 ;;custom-theme-load-path
-(add-to-list 'custom-theme-load-path "~/.emacs.d/custom/atom-one-dark-theme/")
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/custom/atom-one-dark-theme/")
 
 ;;turn off the sound
 (setq visible-bell t)
@@ -134,7 +134,7 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
 (ac-config-default)
 
-;;go mode.
+;;go mode.b
 (add-to-list `load-path "~/.emacs.d/custome/go-mode.el")
 (require `go-mode-autoloads)
 (require 'go-dlv)
@@ -142,27 +142,6 @@
 (setq scroll-step            1
       scroll-conservatively  10000)
 
-;; session
-;;(require `session)
-;;(add-hook 'after-init-hook 'session-initialize)
-
-;;desktop
-;;(load "desktop")
-;;(desktop-load-default)
-;;(desktop-read)
-
-;;ibuffer
-;(require 'ibuffer)
-;(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; browse kill ring
-;;(require 'browse-kill-ring)
-;;(global-set-key [(control c)(k)] 'browse-kill-ring)
-;;(browse-kill-ring-default-keybindings)
-
-;; ido
-;;(require 'ido)
-;;(ido-mode t)
 
 (mouse-avoidance-mode 'animate)
 ; file: ~/.emacs.d/init.el
@@ -179,7 +158,6 @@
 
 ;; Set up package repositories so M-x package-install works.
 
-(load-theme 'atom-one-dark t)       ; Color theme installed via melpa
 
 ;; Snag the user's PATH and GOPATH
 (when (memq window-system '(mac ns))
